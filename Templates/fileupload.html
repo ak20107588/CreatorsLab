@@ -34,7 +34,7 @@
                         <form enctype="multipart/form-data" method="post" action="uploadfile">
                             {% csrf_token %}
                             <div class="custom-file mb-3">
-                                <input type="file" class="form-control" id="fileInput" name="fileInput" accept=".jpg, .jpeg, .png, .gif, .pdf, .doc, .docx" required>
+                                <input type="file" class="form-control" name="fileInput" accept=".jpg, .jpeg, .png, .gif, .pdf, .doc, .docx" required>
                                 {% comment %} <label class="custom-file-label" for="fileInput">Choose File </label> {% endcomment %}
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Upload</button>

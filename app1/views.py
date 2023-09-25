@@ -17,14 +17,17 @@ def fileupload(request):
     return redirect('/')
 
 def uploadfile(request):
-    FileUpload=(request.FILES['fileInput'])
+    if request.session.has_key('is_logged'):
+        FileUpload=(request.FILES['fileInput'])
 
-    data={
-        'FileUpload':FileUpload
-    }
+        data={
+            'FileUpload':FileUpload
+        }
 
-    a=UploadFile(FileUpload=FileUpload)
-    a.save()
+        a=UploadFile(FileUpload=FileUpload)
+        a.save()
 
-    messages.success(request,'File Uploaded Successfully')
-    return render(request,'fileupload.html')
+        messages.success(request,'File Uploaded Successfully')
+        return render(request,'fileupload.html')
+    messages.warning(request,'Please Login!')
+    return redirect('/')
