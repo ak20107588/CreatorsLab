@@ -1,0 +1,50 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome {{request.session.UserName}} </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .welcome-container {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .welcome-message {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .sub-message {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .btn-get-started {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 15px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 welcome-container">
+                <div class="welcome-message">Welcome {{request.session.UserName}} </div>
+                <a href="/fileupload" class="btn btn-primary btn-get-started">Upload File</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
